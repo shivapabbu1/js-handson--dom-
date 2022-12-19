@@ -1,0 +1,42 @@
+ header{
+    font-size: larger;
+    color: black;
+    text-align: center;
+ }
+.boxes{
+    
+    margin: 10px;
+    padding: 10px;
+    background-color: plum;
+    font-family: cursive;
+
+}
+.boxes:hover{
+    background-color: gainsboro;
+    transform: translateX(28x);
+    transform-origin: right;
+
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+
+}
+
+#flex{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.flexitem1{
+    width: 200px;
+    height: 200px;
+    border: dotted 1px;
+    background-color: rgb(17, 105, 182);
+    padding: 5px;
+}
+
+#flex-box{
+   display: flex;
+   flex-wrap: wrap; 
+}
+

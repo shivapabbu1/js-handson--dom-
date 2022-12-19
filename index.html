@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header> JShands on [DOM]</header>
+    <div id="container-fluid">
+         <div class="boxes"> 1. write code to access the element by using id as text ?  <br>
+            <!-- <div id="text">welcome</div>  -->
+              <pre> const msg=document.getElementById("text").innerHTML
+                console.log(msg)
+            </pre>  </div> 
+        <div class="boxes"> 2.write code to access the element by using tagname as h1 ?   <br>
+            <!-- <h1>prepbytes</h1> -->
+         <pre> const tag = document.getElementsByTagName('h1').innerHTML
+            console.log(tag)
+           </pre></div> 
+         <div class="boxes">3.Write the code to access element which is having class as "box" ? <br>
+                <!-- <div class="box"> lets make our dreams come true</div>   -->
+                <pre> const shiva =document.getElementsByClassName('box').innerHTML
+                    console.log(shiva)
+                    </pre>                                       
+        </div>
+        <div class="boxes">4.
+
+            Change the heading from ""Hello"" to ""Hello World"" using DOM functions" <br>
+            <!-- <h1 id="demo">hello</h1>  -->
+            <pre>  document.getElementById('demo').innerHTML="hello world" </pre>
+        </div>
+        <div class="boxes">5.Create three cards on HTML page and arrange them using flex property in row or horizontal  
+        
+            direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction. <br>
+        <div id="flex-box">
+            <div class="flexitem1"></div>
+            <div class="flexitem1"></div>
+            <div class="flexitem1"></div>
+        </div>
+
+            <input type="button" value="change direction" onclick="change()"> <br> 
+            <pre> function change(){
+                let flex = document.getElementById('flex-box')
+                if(flex.style.flexDirection == "row"){
+                    flex.style.flexDirection = "coloumn" 
+                }
+                else {
+                    flex.style.flexDirection ="row"
+                }
+               }</pre>
+        
+        </div>
+        <div class="boxes"> 
+
+             6.Add one style attribute and give text color as red and id attribute and give the id value as ""heading"" in the above given h1 tag using DOM functions" <br> 
+        <!-- <h1 id="id1">hello</h1> -->
+        <pre>  document.getElementById('id1').style.color = 'red';</pre>
+        </div>
+        <div class="boxes">7.Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy" <br>
+         <!-- <div id="page"> <b>hello world</b>  <br> </div> -->
+          <button id="btn" onclick="onbtnclick()">replace text</button>
+          <pre> function onbtnclick(){
+           document.getElementById('page').innerHTML=" <b>welocome elvation academy</b>"
+            }            </pre>
+          
+
+        
+        </div>
+        <div class="boxes"> 8. Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second <br>
+        
+        <div id="time" onload="currenttime()"></div>
+        <pre> function currentTime() {
+            let date = new Date(); 
+            let hh = date.getHours();
+            let mm = date.getMinutes();
+            let ss = date.getSeconds();
+            let session = "AM";
+          
+            if(hh === 0){
+                hh = 12;
+            }
+            if(hh > 12){
+                hh = hh - 12;
+                session = "PM";
+             }
+          
+             hh = (hh < 10) ? "0" + hh : hh;
+             mm = (mm < 10) ? "0" + mm : mm;
+             ss = (ss < 10) ? "0" + ss : ss;
+              
+             let time = hh + ":" + mm + ":" + ss + " " + session;
+          
+            document.getElementById("time").innerText = time; 
+            let t = setTimeout(function(){ currentTime() }, 1000);
+          }
+          
+          currentTime();
+        </pre>
+        
+        </div>
+        <div class="boxes">9.What is the difference between window vs document? <br>
+            <p>window is the execution context and global object for that context's JavaScript.  <br>
+                document contains the DOM, initialized by parsing HTML.</p>
+             
+        </div>
+        <div class="boxes">10.Create a select drop down for selecting Year 20-21, 21-22 etc. Print the item text selected? <br>
+             <select name="year" id="select1">
+                <option value=" year">select year</option>
+                <option value="2020-2021">2020-2021</option>
+                <option value="2021-2022">2021-2022</option>
+                <option value="2022-2023">2022-2023</option>
+                <option value="2023-2024">2023-2024</option>
+             </select> <br>
+              
+             <button  onclick="getOption()"> Check option </button> <br>
+             <span class="output"> selected year is :</span>
+        
+        </div>
+        
+            
+            
+        
+        </div>
+     
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
